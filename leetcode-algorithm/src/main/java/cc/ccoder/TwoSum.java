@@ -15,10 +15,11 @@ public class TwoSum {
     public static void main(String[] args) {
         Solution solution = new Solution();
 //        int[] nums = {7, 2, 11, 15};
-        int[] nums = {3, 3, 5};
+        int[] nums = {2, 4, 5};
         int target = 6;
-        System.out.println(Arrays.toString(solution.twoSum(nums, target)));
-        System.out.println(Arrays.toString(solution.twoSum1(nums, target)));
+//        System.out.println(Arrays.toString(solution.twoSum(nums, target)));
+//        System.out.println(Arrays.toString(solution.twoSum1(nums, target)));
+        System.out.println(Arrays.toString(solution.twoSum2(nums, target)));
     }
 }
 
@@ -55,6 +56,12 @@ class Solution {
         return new int[2];
     }
 
+    /**
+     * map[num[i],i] => 逐步将数据放入map ，判断map中是否存在当前 target-num[i]的值
+     * @param nums
+     * @param target
+     * @return
+     */
     public int[] twoSum2(int[] nums, int target) {
         int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
